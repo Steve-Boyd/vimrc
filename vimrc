@@ -19,6 +19,7 @@ set noshowmode
 if !has('gui_running')
   set t_Co=256
 endif
+
 """"" End Lightline """""
 
 """"" Nerdtree """""
@@ -26,7 +27,12 @@ endif
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
+let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowHidden=1
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 nmap <leader>j :NERDTreeFind<CR>
