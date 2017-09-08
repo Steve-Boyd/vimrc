@@ -2,18 +2,25 @@ execute pathogen#infect()
 
 syntax on
 filetype on
-
 set number
 set hidden
 set history=100
 set hlsearch
 set showmatch
+set updatetime=250
+filetype indent on
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set autoindent
 
 """"" Lightline """""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
-set laststatus=2
+"set laststatus=2
 set noshowmode
 
 if !has('gui_running')
@@ -90,3 +97,9 @@ noremap <Leader>r :CommandTFlush<CR>
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 """"" End Nerdcommenter """""
+
+""""" Airline theme """""
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+"let g:airline#extensions#tabline#enabled = 1
