@@ -10,8 +10,8 @@ set showmatch
 set updatetime=250
 filetype indent on
 set nowrap
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
@@ -105,5 +105,19 @@ let g:airline#extensions#whitespace#enabled = 0
 
 "" Typescript-Vim ""
 let g:typescript_indent_disable = 1
+"let g:typescript_compiler_binary = 'tsc'
+"let g:typescript_compiler_options = ''
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+hi SpellBad ctermfg=015 ctermbg=001 guifg=#ff0000 guibg=#ffffff
+hi SpellCap ctermfg=015 ctermbg=001 guifg=#ff0000 guibg=#ffffff
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
