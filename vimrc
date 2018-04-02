@@ -39,7 +39,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 nmap <leader>j :NERDTreeFind<CR>
 
@@ -101,23 +101,3 @@ let g:NERDSpaceDelims = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
-"let g:airline#extensions#tabline#enabled = 1
-
-"" Typescript-Vim ""
-let g:typescript_indent_disable = 1
-"let g:typescript_compiler_binary = 'tsc'
-"let g:typescript_compiler_options = ''
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
-hi SpellBad ctermfg=015 ctermbg=001 guifg=#ff0000 guibg=#ffffff
-hi SpellCap ctermfg=015 ctermbg=001 guifg=#ff0000 guibg=#ffffff
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
