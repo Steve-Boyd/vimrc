@@ -21,10 +21,6 @@
   url = https://github.com/ctrlpvim/ctrlp.vim.git
 
 # WIP
-#[submodule "bundle/YouCompleteMe"]
-#	path = bundle/YouCompleteMe
-#	url = https://github.com/Valloric/YouCompleteMe.git
-
 #[submodule "bundle/yats"]
 #	path = bundle/yats
 #	url = https://github.com/HerringtonDarkholme/yats.vim.git

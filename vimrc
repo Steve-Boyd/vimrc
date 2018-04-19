@@ -16,11 +16,29 @@ set expandtab
 set smartindent
 set autoindent
 
+colorscheme Tomorrow-Night-Eighties
+let mapleader=" "
+inoremap jj <esc>
+
+" reload vimrc settings on save
+map <leader>s :source ~/.vimrc<CR>
+
+map <D-A-RIGHT> <C-w>l
+map <D-A-LEFT> <C-w>h
+map <D-A-DOWN> <C-w><C-w>
+map <D-A-UP> <C-w>W
+
+" remove whitespace on save
+" autocmd BufWritePre * :%s/\s\+$//e
+
+" reopen previously opened file
+" nnoremap <Leader><Leader> :e#<CR>
+
 """"" Lightline """""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
-"set laststatus=2
+set laststatus=2
 set noshowmode
 
 if !has('gui_running')
@@ -30,7 +48,7 @@ endif
 """"" End Lightline """""
 
 """"" Nerdtree """""
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree "auto open nerdtree
 autocmd VimEnter * wincmd p
 
 let NERDTreeAutoDeleteBuffer = 1
@@ -67,36 +85,6 @@ let g:lightline.component_function = {
 
 """"" End Nerdtree """""
 
-colorscheme Tomorrow-Night-Eighties
-let mapleader=" "
-
-" reload vimrc settings on save
-map <leader>s :source ~/.vimrc<CR>
-
-map <D-A-RIGHT> <C-w>l
-map <D-A-LEFT> <C-w>h
-map <D-A-DOWN> <C-w><C-w>
-map <D-A-UP> <C-w>W
-
-" remove whitespace on save
-" autocmd BufWritePre * :%s/\s\+$//e
-
-" reopen previously opened file
-" nnoremap <Leader><Leader> :e#<CR>
-
-""""" Command-T """""
-" ignore these files when searching
-set wildignore+=*.log,*.sql,*.cache
-
-" reindex files after new ones have been added with <Leader>+r
-noremap <Leader>r :CommandTFlush<CR>
-""""" End Command-T """""
-
-""""" Nerdcommenter """""
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-""""" End Nerdcommenter """""
-
 """"" Airline theme """""
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
@@ -115,3 +103,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+"""" end Ctrlp """"
+
+"""" Vim-fugitive """"
+nmap     <Leader>g :Gstatus<CR>gg<c-n>
+nnoremap <Leader>d :Gdiff<CR>
+nmap     <Leader>b :Gblame<CR>gb<c-n>
+"""" end Vim-fugitive """"
+
