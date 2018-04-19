@@ -47,6 +47,12 @@ endif
 
 """"" End Lightline """""
 
+""""" Airline theme """""
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+"""" end Airline theme """"
+
 """"" Nerdtree """""
 "autocmd VimEnter * NERDTree "auto open nerdtree
 autocmd VimEnter * wincmd p
@@ -57,7 +63,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-map <C-b> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 nmap <leader>j :NERDTreeFind<CR>
 
@@ -85,11 +91,6 @@ let g:lightline.component_function = {
 
 """"" End Nerdtree """""
 
-""""" Airline theme """""
-let g:airline_theme='tomorrow'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#enabled = 0
-
 """" Ctrlp """"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -106,8 +107,8 @@ let g:ctrlp_custom_ignore = {
 """" end Ctrlp """"
 
 """" Vim-fugitive """"
-nmap     <Leader>g :Gstatus<CR>gg<c-n>
-nnoremap <Leader>d :Gdiff<CR>
-nmap     <Leader>b :Gblame<CR>gb<c-n>
+nmap     <Leader>gs :Gstatus<CR>gg<c-n>
+nnoremap <Leader>gd :Gdiff<CR>
+nmap     <Leader>gb :Gblame<CR>gb<c-n>
 """" end Vim-fugitive """"
 
