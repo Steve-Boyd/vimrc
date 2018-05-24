@@ -35,6 +35,7 @@ map <D-A-UP> <C-w>W
 " nnoremap <Leader><Leader> :e#<CR>
 
 """"" Lightline """""
+"" Bottom bar ""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
@@ -48,12 +49,14 @@ endif
 """"" End Lightline """""
 
 """"" Airline theme """""
+"" Vim color theme ""
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 """" end Airline theme """"
 
 """"" Nerdtree """""
+"" Tree explorer ""
 "autocmd VimEnter * NERDTree "auto open nerdtree
 autocmd VimEnter * wincmd p
 
@@ -92,6 +95,7 @@ let g:lightline.component_function = {
 """"" End Nerdtree """""
 
 """" Ctrlp """"
+"" Fuzzy searching ""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -107,6 +111,7 @@ let g:ctrlp_custom_ignore = {
 """" end Ctrlp """"
 
 """" Vim-fugitive """"
+"" Add git functionality to vim. Map git status, blame, and diff commands ""
 nmap     <Leader>gs :Gstatus<CR>gg<c-n>
 nnoremap <Leader>gd :Gdiff<CR>
 nmap     <Leader>gb :Gblame<CR>gb<c-n>
