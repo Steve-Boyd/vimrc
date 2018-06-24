@@ -9,7 +9,9 @@ set hlsearch
 set showmatch
 set updatetime=250
 filetype indent on
-set nowrap
+set wrap
+set linebreak
+set nolist " list disables linebreak
 set tabstop=2
 set shiftwidth=2
 set expandtab
