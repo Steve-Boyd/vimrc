@@ -1,14 +1,12 @@
 execute pathogen#infect()
-
+filetype plugin indent on
 syntax on
-filetype on
 set number
 set hidden
 set history=100
 set hlsearch
 set showmatch
 set updatetime=250
-filetype indent on
 set wrap
 set linebreak
 set nolist " list disables linebreak
@@ -60,7 +58,7 @@ let g:airline#extensions#whitespace#enabled = 0
 """"" Nerdtree """""
 "" Tree explorer ""
 "autocmd VimEnter * NERDTree "auto open nerdtree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * wincmd p
 
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeShowHidden=1
@@ -98,18 +96,18 @@ let g:lightline.component_function = {
 
 """" Ctrlp """"
 "" Fuzzy searching ""
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+"
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
 """" end Ctrlp """"
 
 """" Vim-fugitive """"
@@ -119,3 +117,20 @@ nnoremap <Leader>gd :Gdiff<CR>
 nmap     <Leader>gb :Gblame<CR>gb<c-n>
 """" end Vim-fugitive """"
 
+"""" vim-terraform """"
+" Allow vim-terraform to align settings automatically with Tabularize.
+" let g:terraform_align=1
+
+" Allow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
+let g:terraform_fold_sections=1
+
+" Allow vim-terraform to re-map the spacebar to fold/unfold. This works in conjunction with let g:terraform_fold_sections=1 which should be enabled if you plan to use this feature. Defaults to 0 which is off.
+let g:terraform_remap_spacebar=1
+
+" Allow vim-terraform to automatically format *.tf and *.tfvars files with terraform fmt. You can also do this manually with the :TerraformFmt command.
+let g:terraform_fmt_on_save=1
+
+" Override the Vim's commentstring setting with a custom value. Defaults to #%s. Example:
+let g:terraform_commentstring='#%s'
+
+"""" end vim-terraform """"
