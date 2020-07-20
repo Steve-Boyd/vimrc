@@ -1,7 +1,9 @@
-execute pathogen#infect()
-filetype plugin indent on
+execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
 syntax on
-set number
+filetype plugin indent on
+
+set relativenumber
+set nu rnu
 set hidden
 set history=100
 set hlsearch
@@ -15,7 +17,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
-
+set belloff=all
 colorscheme Tomorrow-Night-Eighties
 let mapleader=" "
 inoremap jj <esc>
@@ -94,22 +96,6 @@ let g:lightline.component_function = {
 
 """"" End Nerdtree """""
 
-"""" Ctrlp """"
-"" Fuzzy searching ""
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-"
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-"""" end Ctrlp """"
-
 """" Vim-fugitive """"
 "" Add git functionality to vim. Map git status, blame, and diff commands ""
 nmap     <Leader>gs :Gstatus<CR>gg<c-n>
@@ -134,3 +120,15 @@ let g:terraform_fmt_on_save=1
 let g:terraform_commentstring='#%s'
 
 """" end vim-terraform """"
+
+
+"""" Python """"
+" add yaml stuffs
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+
+"""" end Python """"
+
+"""" FZF """"
+
+
+"""" end FZF """"

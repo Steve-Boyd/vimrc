@@ -25,3 +25,10 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
+[submodule "bundle/ansible-vim"]
+	path = bundle/ansible-vim
+	url = git@github.com:pearofducks/ansible-vim.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = git@github.com:junegunn/fzf.vim.git
+
